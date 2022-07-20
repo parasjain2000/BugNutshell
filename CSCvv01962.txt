@@ -1,0 +1,938 @@
+*******************************************************************************
+
+Bug ID   : CSCvv01962         Project  : CSC.asr5k.general  Status  : R              
+Product  : upf                Component: sm                 Severity: 1 (catastrophic
+Headline : Oakla UL packet Drops, User Plane Function (UPF)
+PrimaryPV : 
+Version :21.15.42 21.15.43 21.18.6 21.20.3 21.20.5 21.20.k6 21.21.0 
+Build-number : 
+Platform :                OS Version :            S1S2-w/o-workaround :                   
+Software :                    Hardware :                    
+Submitter: nkosanov           Submitted: 07/15/2020 11:36:45     Last Updtd : 04/19/2021 02:38:02  
+RNE-Type: NONE                New-on : 07/15/2020 11:36:45      
+Root-cause-analysis:                                                  
+Interest : thphilip
+Doc-manager: sachimit                                       
+Technical-writer:                                           
+Behavior-changed : N          
+Behaviour-change-resolution: Undefined                                
+Rally-id:                                                             
+Customer-severity:                                                    
+Sync-to-customer:                                                     
+Scenario:                                                             
+Regression-analytics:                                                                               
+Regression-probability:                                                                             
+Source-submitted-on:                                                  
+Submitter-manager:mnazirud                                            
+Known-affected-releases:
+
+Known-fixed-releases:
+
+
+
+Potentially-affected-releases:
+
+Patch-releases:
+
+Build-platform:
+
+MDF-edited:            
+MDF-series:
+
+MDF-concepts:
+
+MDF-software-families:
+
+MDF-software-types:
+
+MDF-interface-and-modules:
+
+MDF-nodes:
+
+Affected-platforms:
+
+Tags:
+
+ImpactedProjects:
+
+ImpactedPlatforms:
+
+Serviceability-improvement:                                           
+Submitter-education:                                                  
+Troubleshooting-documentation:                                        
+mc_learning:                                                          
+Original-resolved-on: 07/16/2020 04:07:33                             
+Multi-commit-flag: Y                                                  
+Mean-time-to-assigned: 0                                              
+Mean-time-to-resolved: 61                                             
+Mean-time-to-verified:        
+TPS_comp_id:                                                          
+TPS_comp_name:                                                        
+TPS_comp_type:                                                        
+TPS_issue: N                                                          
+TPS_release:                                                          
+Supplier_ticket_number:                                               
+TPS_supplier:                                                         
+TPS_version:                                                          
+TPS-fixed:                                                            
+TPS-fixed-version:                                                                                                                                                                                      
+TPS-distro:                                                           
+TPS-upstream:                                                         
+TPS_vendor_escalation_requested:                                      
+TPS_type:                                                                                                                                                                                               
+Firmware:                                                             
+Documentation-link:                                                   
+Parent-Class:                                                         
+Parent-Component:                                                     
+Parent-Priority:                                                      
+Parent-Product:                                                       
+Parent-Project:                                                       
+Parent-Severity:                                                      
+Parent-State:                                                         
+Parent-DE-manager:                                                    
+Cisco_pid:                                                                                                                                                                                                                  
+Hardware_cisco_part_num:                                                                                                                                                                                                    
+Hardware_manufacturing_part_num:                                                                                                                                                                                            
+Serviceability-reason:                                                
+I-reason:                     
+Jira-id:                                                              
+Upgrade-caveats:                                                      
+Upgrade-remarks:                                                      
+Escape-type:                                                          
+Escape-of:                                                            
+Escape-manager:                                                       
+Escape-from:                                                          
+Parent-Dev-Escape-Activity:                                           
+Parent-Test-EDP-Phase:                                                
+Dev-escape-resolution-code:                                           
+Test-escape-resolution-code:                                          
+Test-escape:                                                          
+Parent State:                                                         
+Parent-Class:                                                         
+Parent-Component:                                                     
+Parent-DTPT-manager:                                                  
+Parent-Product:                                                       
+Parent-Project:                                                       
+Parent-Severity:                                                      
+IFD-CFD-Conv-date: 07/15/2020 06:31:24            
+Single-select1:                                                       
+Single-select2:                                                       
+Single-select3:                                                       
+Single-select4:                                                       
+Single-select5:                                                       
+Single-select6:                                                       
+Single-select7:                                                       
+PSIRT: N                                                              
+PSIRT-status:                                                         
+SIR:                                                                  
+Hardening: N                                                          
+PSIRT-attribute:                                                      
+Product-owner:                                                        
+Child-defects:                                                        
+Parent-defects:                                                       
+Impact-regression: N                                                  
+Data-classification: Cisco Highly Confidential                        
+Data-classification-reason: Customer data                             
+Back-out-bad-commit: N                                                
+Test-name:                                                            
+Attribute3:                                                           
+To-be-fixed:21.15.43 
+
+Solution-impacted:
+
+Solution-use-case:
+
+Solution-version:
+
+Impact:Crash 
+Trigger  :                    
+Keyword :c-tmo-us rne-approved c-vodacom-za 
+Files Impacted : 
+
+Assigner : sachimit           Priority :               Assigned: 07/15/2020 12:40:37 
+Code-reviewer: asufi          
+Opened-on: 07/16/2020 04:07:33Opener: pkhirid               
+Engineer : pkhirid            DE-manager  : sachimit        Est Time/Attribute : gnosis, Vodacom-CUPS-Issues Vodacom-CUP
+Est. completion date:                      
+Script-version:                         
+
+More-by : sachimit            More-on: 09/14/2020 04:34:49  
+
+Documents Changed: No         Resolved: 09/14/2020 22:05:29 Resolver: pkhirid        
+
+Origin  : requirements        Category :                    Reason :                                
+Verifier:                     Verified Confidence:                              
+Verified Date:                          
+
+Bug Analysis :
+Found-during :                   Customer
+Original-found-during :          Customer
+Activity-when-found :            Customer-Use
+Original-activity-when-found :   Customer-Use
+Detailed-activity :              
+Summitter-org :                  CX-GC-AMER-SP-TMO-Cell-Mobility-US
+Automated-test :                 N
+Automated-test-id :              
+Regression-submitter :           N
+Breakage :                       No
+Child-type :           
+Regression :                     N
+
+Bug-origin :                     Requirements
+Failure-type :                   
+By-previous-commit-value :       No
+By-previous-commit :             
+Previous-commit-id:              
+Released-code :                  N
+Dev-escape-activity :            
+Dev-escape-resolver-opinion :    N
+Prevention :                     
+
+
+
+Change-db-id :                   
+Customer-name :                  
+Customer-track-number :          
+Test-EDP-phase :                  
+Test-EDP-activity :               
+Test-group-type :                 
+Release-stage :                   
+Test-complexity-required :        
+
+Regression :			N
+Technical-writer :		
+Behavior-changed :		N
+Behaviour-change-resolution :  Undefined
+
+
+Tickets-count :                   2
+Tickets-count-direct :            2
+Trouble-tickets :              BEMS01123569;689485173
+Trouble-tickets-direct :C3689485173 
+Trouble-tickets-direct :BEMSBEMS01123569 
+
+Is-customer-visible :                 Y
+DE-Priority:  ()         
+BTK-security-complete :                 Y
+Not-customer-visible-reason :                 
+Security-screening-timestamp :                 07/20/2020 00:54:24
+Document :    
+
+Summary:
+Oakla UL packet Drops, User Plane Function (UPF)
+
+******************* Related Service Requests (2 of 2)*******************
+Type       Trouble Ticket  Customer/Vendor                Created By
+--------------------------------------------------------------------------------
+BEMS       BEMS01123569    T MOBILE USA                             
+C3         689485173       T MOBILE USA                             
+
+
+******************* Related Foreign Bugs (0 of 0)*******************
+Bug Type     Bug Id                    Link
+--------------------------------------------------------------------------------
+
+
+******************* Related Defects (1 of 1)*******************
+Relationship Type     Submitter       Date                 Identifier       Project      Status   
+------------------------------------------------------------------------------------------------
+Teacat                 cdetsadm      07/22/2020 22:05:56    CSCvv11756      CSC.tea         N            
+
+
+********************* Listing of Notes (16 of 16 ) ***********************
+
+---Start of Note Titled: R-comments.p4 (Created 09/14/2020 22:05:29 Added 09/14/2020 22:05:29 by pkhirid)---
+Resolved in v21.20.x
+---End of Note Titled: R-comments.p4---
+
+
+---Start of Note Titled: M-comments.p3 (Created 09/14/2020 04:34:49 Added 09/14/2020 04:34:49 by sachimit)---
+Please check for 21.20.x changeset. 
+
+thanks
+---End of Note Titled: M-comments.p3---
+
+
+---Start of Note Titled: SS-Eval (Created 09/09/2020 05:44:30 Added 09/09/2020 05:44:30 by thphilip)---
+$$SS
+Showstopper
+-thphilip
+---End of Note Titled: SS-Eval---
+
+
+---Start of Note Titled: R-comments.p3 (Created 09/02/2020 22:25:18 Added 09/02/2020 22:25:18 by pkhirid)---
+Branch: v21.18.x
+commit 0639b4cf32b1d8e987111d93313bf79d9ce84348
+Author: Priyanka Khirid <pkhirid@cisco.com>
+Date:   Thu Jul 16 14:13:58 2020 +0530
+
+    CSCvv01962 - Oakla UL packet Drops, User Plane Function (UPF)
+    
+    Packets are not offloaded after detecting HTTP Permanent Failure. The
+    incoming packet rate is high and forwarded them to SMU leads to packet
+    drop at MEMIF
+
+---End of Note Titled: R-comments.p3---
+
+
+---Start of Note Titled: M-comments.p2 (Created 09/02/2020 04:54:48 Added 09/02/2020 04:54:48 by sachimit)---
+Merge is needed in 21.20.x
+---End of Note Titled: M-comments.p2---
+
+
+---Start of Note Titled: KnowledgeSignature (Created 08/04/2020 07:47:58 Added 08/04/2020 07:47:58 by dtikunov)---
+https://gnosis.cisco.com/#!/signature/bug/5f29736c6ad8aba8d8ff0c19/finish?summary
+---End of Note Titled: KnowledgeSignature---
+
+
+---Start of Note Titled: DetectionLogic (Created 08/04/2020 07:29:06 Added 08/04/2020 07:29:06 by dtikunov)---
+The following error is reported when debug logs are enabled
+2020-Jul-14+19:09:34.998 [uplane 222483 unusual] [1/0/1093 <sessmgr:13> http_analyzer.c:4221] [callid 03941326] [Call Trace] [context: up, contextID: 2]  [software internal system syslog] HTTP parse error in request: packet not analyzed because error in previous pkt
+---End of Note Titled: DetectionLogic---
+
+
+---Start of Note Titled: R-comments.p2 (Created 07/17/2020 03:14:15 Added 07/17/2020 03:14:15 by sachimit)---
+fix is merged in 21.18
+---End of Note Titled: R-comments.p2---
+
+
+---Start of Note Titled:  Scrubnote (Created 07/16/2020 11:48:40 Modified 10/05/2020 05:09:05 by cms)---
+{201005 pkhirid S B} Present in v21.20.ux
+{200821 nmicic S R} Vodacom-CUPS-MustFix-21.20.x
+{200716 sachimit S B} Resolved
+---End of Note Titled: Scrubnote---
+
+
+---Start of Note Titled: no_ss_reason_v21.18.x (Created 07/16/2020 06:00:58 Added 07/16/2020 06:00:58 by mitgblds)---
+Reason for not marking the CDET as SS and still require Roll Up access by pkhirid : 
+ This is present in v21.15.x, requires to be merged in v21.18.x
+---End of Note Titled: no_ss_reason_v21.18.x---
+
+
+---Start of Note Titled: M-comments (Created 07/16/2020 05:59:04 Added 07/16/2020 05:59:04 by pkhirid)---
+Required in v21.18.x
+---End of Note Titled: M-comments---
+
+
+---Start of Note Titled: R-comments (Created 07/16/2020 04:07:36 Added 07/16/2020 04:07:36 by pkhirid)---
+Branch: v21.15.x
+commit 7675c2cbb3e9ac2a17285ee6eda639ae6cbb3229
+Author: Priyanka Khirid <pkhirid@cisco.com>
+Date:   Thu Jul 16 14:13:58 2020 +0530
+
+    CSCvv01962 - Oakla UL packet Drops, User Plane Function (UPF)
+    
+    Packets are not offloaded after detecting HTTP Permanent Failure. The
+    incoming packet rate is high and forwarded them to SMU leads to packet
+    drop at MEMIF
+
+---End of Note Titled: R-comments---
+
+
+---Start of Note Titled: no_ss_reason_v21.15.x (Created 07/16/2020 01:42:32 Added 07/16/2020 01:42:32 by mitgblds)---
+Reason for not marking the CDET as SS and still require Roll Up access by pkhirid : 
+ This is seen on customer site, and must be fixed.
+---End of Note Titled: no_ss_reason_v21.15.x---
+
+
+---Start of Note Titled: Unit-test (Created 07/16/2020 01:41:11 Added 07/16/2020 01:41:11 by pkhirid)---
+Unit-Testing:
+Simulated the scenario and verified offloading takes place after HTTP Permanent failure detection.
+---End of Note Titled: Unit-test---
+
+
+---Start of Note Titled: BigDescription (Created 07/15/2020 11:40:17 Added 07/15/2020 11:40:17 by nkosanov)---
+Data collected:
+=-=-=-=-=-=-=-=-=-=--=-
+
+Data organized:
+=-=-=-=-=-=-=-=-=-=--=-
+ 
+Yesterday?s test on LAUPF004 - https://cisco.app.box.com/folder/117954184851
+Sessmgr Debug logs ? ?debug_logs?
+Mon sub ? ?mon_sub.log?
+Mon2pcap ? ?pcap.pcap?
+Pcap from probe  - ExportData__netrvs22_if5_SMF-UPF_07132020_35700000_PM__PDT_1
+CLIs ? ?stats.log?
+SSD ? ?LAUPF004_ssd.tar ?
+Missing sessmgr core files.
+ 
+Today?s test on San Diego - https://cisco.app.box.com/folder/117947251601
+Sessmgr debug logs ? ?SDUPF007-SDUPF007-*?
+PCAP from external probe ? ?ExportData__netesc22_if5_SMF-UPF_07142020_124100000_PM__PDT_1?
+SSDs
+Monitor sub + CLI - SDUPF007-Monpro-DebugLogs-CLIs.tar
+Missing sessmgr core files.
+ 
+Today?s test on LAUPF010 - https://cisco.app.box.com/folder/117947374599
+Monitor subscriber ? ?Monitor_subscriber_LAUPF010_2020-07-14_202517.log?
+PCAP from external probe ? ?ExportData_...?
+Core file session manager instance 13
+                                                               i.      ?crash-01-00-5f0e0099-core?
+                                                             ii.      ?crash-01-00-5f0dfc79-core?
+SSDs     
+                                                               i.      ?SSD_LAUPF010_2020-07-14_203352.log?
+                                                             ii.      ?SSD_LAUPF010_2020-07-14_210037.log?
+                                                           iii.      ?SSD_LAUPF010_2020-07-14_210911.log?
+CLIs session stats ? ?show_session_CLI_LAUPF010_2020-07-14_202116.log?
+CLIs VPP - vppctl_logs_LAUPF010_2020-07-14_210217.log
+Missing sessmgr debug logs
+ 
+Analysis:
+=-=-=-=-=-=-=-=-=-=--=-
+
+Data organized:
+ 
+Yesterday?s test on LAUPF004 - https://cisco.app.box.com/folder/117954184851
+Sessmgr Debug logs ? ?debug_logs?
+Mon sub ? ?mon_sub.log?
+Mon2pcap ? ?pcap.pcap?
+Pcap from probe  - ExportData__netrvs22_if5_SMF-UPF_07132020_35700000_PM__PDT_1
+CLIs ? ?stats.log?
+SSD ? ?LAUPF004_ssd.tar ?
+Missing sessmgr core files.
+ 
+Today?s test on San Diego - https://cisco.app.box.com/folder/117947251601
+Sessmgr debug logs ? ?SDUPF007-SDUPF007-*?
+PCAP from external probe ? ?ExportData__netesc22_if5_SMF-UPF_07142020_124100000_PM__PDT_1?
+SSDs
+Monitor sub + CLI - SDUPF007-Monpro-DebugLogs-CLIs.tar
+Missing sessmgr core files.
+ 
+Today?s test on LAUPF010 - https://cisco.app.box.com/folder/117947374599
+Monitor subscriber ? ?Monitor_subscriber_LAUPF010_2020-07-14_202517.log?
+PCAP from external probe ? ?ExportData_...?
+Core file session manager instance 13
+                                                               i.      ?crash-01-00-5f0e0099-core?
+                                                             ii.      ?crash-01-00-5f0dfc79-core?
+SSDs     
+                                                               i.      ?SSD_LAUPF010_2020-07-14_203352.log?
+                                                             ii.      ?SSD_LAUPF010_2020-07-14_210037.log?
+                                                           iii.      ?SSD_LAUPF010_2020-07-14_210911.log?
+CLIs session stats ? ?show_session_CLI_LAUPF010_2020-07-14_202116.log?
+CLIs VPP - vppctl_logs_LAUPF010_2020-07-14_210217.log
+Missing sessmgr debug logs
+ 
+[local]LAUPF010# task core facility sessmgr instance 13
+Tuesday July 14 18:42:01 UTC 2020
+ 
+[local]LAUPF010# task core facility sessmgr instance 13
+Tuesday July 14 18:59:37 UTC 2020
+[local]LAUPF010#
+ 
+[local]LAUPF010# show user-plane-service statistics all[33D[4hsubscribers [4l[11Conly full callid 03941326
+Tuesday July 14 18:58:51 UTC 2020
+ 
+  Local SEID      : [0x0034000000000179] 14636698788954489
+  Remote SEID     : [0x0202fa4862c2a42c] 144953326830789676
+  State           : Connected
+  Connect Time    : Tue Jul 14 18:22:04 2020
+  Idle time       : 00h00m00s
+  Access Type: uplane-ipv6               Network Type: IP
+  user-plane-service-name: upf
+  Callid: 03941326
+  Rulebase: test-only
+  Interface Type: N4                    
+  Card/Cpu: 1/0                          Sessmgr Instance: 13
+  IP address: 2607:fb90:e7b6:7:0:3:9413:2601
+
+
+
+Analysis:
+
+Analysis from LAUPF010.
+ 
+Tuesday July 14 19:12:36 UTC 2020
+ 
+  Local SEID      : [0x0034000000000179] 14636698788954489
+  Remote SEID     : [0x0202fa4862c2a42c] 144953326830789676
+  State           : Connected
+  Connect Time    : Tue Jul 14 18:22:04 2020
+  Idle time       : 00h00m00s
+  Access Type: uplane-ipv6               Network Type: IP
+  user-plane-service-name: upf
+  Callid: 03941326
+  Rulebase: test-only
+  Interface Type: N4                    
+  Card/Cpu: 1/0                          Sessmgr Instance: 13
+  IP address: 2607:fb90:e7b6:7:0:3:9413:2601
+  Source context: up                     Destination context: n6
+  PDN-Instance: fast.t-mobile.com  
+  User-plane-Sx-addr: 10.192.145.187              
+  Control-plane-Sx-addr: 10.192.146.137              
+  Number of associated PDRs : 2
+  Number of associated ADC PDRs : 0
+  Number of associated FARs : 2
+  Number of associated QERs : 2
+  Number of associated BARs : 0
+  Number of associated URRs : 17
+  Number of associated BLIs : 1
+  Uplink APN AMBR (bps) : 4294967000       Downlink APN AMBR (bps) : 4294967000
+  active input acl: n/a                active output acl: n/a           
+  active input ipv6 acl: n/a             active output ipv6 acl: n/a           
+  Subscriber Parameters:
+  IMSI: 310260193351227
+  IMEI: 9900157500589408
+  MSISDN: 14253891826
+  Rat Type: 51
+  MCC MNC: 310260
+  SGSN Address: 10.176.145.68
+  ULI: NRTAI+NCGI=1300622f8a0013006201c392700400
+  GGSN Address: 10.192.146.153
+  input pkts: 561805                              output pkts: 751350     
+  input bytes: 444718107                          output bytes: 815135727  
+  input bytes dropped: 14141301                   output bytes dropped: 1027     
+  input pkts dropped: 11550                       output pkts dropped: 10       
+  CF Buffered Uplink Packets: 0                   CF Buffered Downlink Packets: 0          
+  CF Buffered Uplink Bytes: 0                     CF Buffered Downlink Bytes: 0          
+  Uplink Packets in Buffer: 0                     Downlink Packets in Buffer: 0          
+  Buff Over-limit Uplink Pkts: 0                  Buff Over-limit Downlink Pkts: 0          
+  DDN buffered pkts : 0                           DDN buffered bytes : 0          
+  DDN buffer overflow drop pkts : 4               DDN buffer overflow drop bytes : 400        
+  pk rate from user(bps): 11517344                pk rate to user(bps): 256880     
+  ave rate from user(bps): 9067733                ave rate to user(bps): 207008     
+  sust rate from user(bps): 9068649               sust rate to user(bps): 207016     
+  pk rate from user(pps): 1004                    pk rate to user(pps): 438        
+  ave rate from user(pps): 789                    ave rate to user(pps): 352        
+  sust rate from user(pps): 790                   sust rate to user(pps): 352        
+  ipv4 bad hdr: 0                                 ipv4 ttl exceeded: 0        
+  ipv4 fragments sent: 0                          ipv4 could not fragment: 0        
+  ipv4 bad length trim: 0        
+  ipv4 input mcast drop: 0                        ipv4 input bcast drop: 0        
+  input pkts dropped (0 mbr): 0                   output pkts dropped (0 mbr): 0        
+  ipv4 input acl drop: 0                          ipv4 output acl drop: 0        
+  ipv6 input acl drop: 0                          ipv6 output acl drop: 0        
+  ip source violations: 0                         ipv4 output no-flow drop: 0        
+  ipv6 bad hdr: 0                                 ipv6 bad length trim: 0        
+  ipv4 icmp packets dropped: 0        
+  APN AMBR Uplink Pkts Drop: 0                     APN AMBR Downlink Pkts Drop: 0        
+  APN AMBR Uplink Bytes Drop: 0                    APN AMBR Downlink Bytes Drop: 0        
+  APN AMBR Uplink Pkts IP pref lowered: 0          APN AMBR Downlink Pkts IP pref lowered: 0        
+  APN AMBR Uplink Bytes IP pref lowered: 0         APN AMBR Downlink Bytes IP pref lowered: 0        
+  ITC Uplink Pkts Drop: 0                          ITC Downlink Pkts Drop: 0        
+  ITC Uplink Bytes Drop: 0                         ITC Downlink Bytes Drop: 0        
+  ITC Uplink Pkts IP pref lowered: 0               ITC Downlink Pkts IP pref lowered: 0        
+  ITC Uplink Bytes IP pref lowered: 0              ITC Downlink Bytes IP pref lowered: 0        
+  ITC Terminated Flows:: 0                         ITC Redirected Flows: 0        
+  Flow Action Terminated Flows: 0                  Flow Action Redirected Flows: 0        
+  ToS marked Uplink Pkts: 553534                   ToS marked Downlink Pkts: 750082   
+  ToS marked Uplink bytes: 414129677               ToS marked Downlink Bytes: 784926600
+  CC Dropped Uplink Pkts: 0                        CC Dropped Downlink Pkts: 0        
+  CC Dropped Uplink bytes: 0                       CC Dropped Downlink Bytes: 0        
+  Uplink Inflight Pkts: 967                        Downlink Inflight Pkts: 2640        
+  QFI Mismatch Uplink Pkts Drop: 485      
+ 
+  Flow information:
+    Current Active Flows:
+      TCP: 40
+      UDP: 17
+    Total Flows:
+      TCP: 2196
+      UDP: 289
+      FP:  1716
+ 
+Static & Predef Rule Match stats:
+Rule Name            Pkts-Down  Bytes-Down Pkts-Up    Bytes-Up   Hits       Match-Bypassed  FP-Down(Pkts/Bytes)  FP-Up(Pkts/Bytes)
+-------------------- ---------- ---------- ---------- ---------- ---------- --------------  -------------------  -----------------
+IPV6-whtlst-https_2300_04         16       7402         22      11264          8             30          7/738             17/10334
+IPV6-whtlst-https_2300_10       3310    1580225       4892     875873       3415           4787        880/155286           2169/200530
+default                    2540    2061443       7237    1642389       1054           8755       2296/1794044           6453/1373918
+dns-android_44_01             8       2992          8        736         16              0          0/0              0/0
+dns-port53_43_04           1590     252501       1718     140993       3308              0          0/0              0/0
+dns-port53_43_14              6       1367          6        522         12              0          0/0              0/0
+handshake_3101_01          2511     290602       2851     366239       5377              0          0/0              0/0
+http-default_1600_01     707868  794436115     500877  415035197     978205         229855      80434/6066516         145749/211631780
+https-port_443_01         33180   16481595      34451   14752125       9017          58623      26459/13127142          28493/13719673
+tcp-flags                   313      19874        402      24727        682             36          0/0              0/0
+ 
+Dynamic Rule Match stats:
+PDR Id   Rule Name            Pkts-Down  Bytes-Down Pkts-Up    Bytes-Up   Hits       Match-Bypassed  FP-Down(Pkts/Bytes)  FP-Up(Pkts/Bytes)
+-------- -------------------- ---------- ---------- ---------- ---------- ---------- --------------  -------------------  -----------------
+ 
+Post-Processing Rule Match stats:
+Rule Name            Pkts-Down  Bytes-Down Pkts-Up    Bytes-Up   Hits       Match-Bypassed  FP-Down(Pkts/Bytes)  FP-Up(Pkts/Bytes)
+-------------------- ---------- ---------- ---------- ---------- ---------- --------------  -------------------  -----------------
+    
+Config:
+rulebase spp-tmobile
+      action priority 39500 ruledef handshake_3101_01 charging-action ca_3101_up_51
+      action priority 39510 ruledef tcp-flags charging-action ca_3101_up_51
+      action priority 64010 ruledef https-port_443_01 charging-action ca_443_74
+      action priority 64020 ruledef http-default_1600_01 charging-action ca_1600_74
+      action priority 65000 ruledef default charging-action ca_ipdefault_74
+      
+We see all actions preformed shouldn't cause drops:
+ 
+    charging-action ca_3101_up_51
+      content-id 51
+      service-identifier 3101
+      billing-action egcdr
+      cca charging credit
+    #exit   
+    charging-action ca_3101_up_51
+      content-id 51
+      service-identifier 3101
+      billing-action egcdr
+      cca charging credit
+    #exit
+    charging-action ca_443_74
+      content-id 74
+      service-identifier 443
+      billing-action egcdr
+      cca charging credit
+    #exit
+    charging-action ca_1600_74
+      content-id 74
+      service-identifier 1600
+      billing-action egcdr
+      cca charging credit
+    #exit
+    charging-action ca_ipdefault_74
+      content-id 74
+      service-identifier 700
+      billing-action egcdr
+      cca charging credit rating-group 74
+    #exit
+ 
+In rulebase we didn't notice anything that would cause impact, customer changed tcp mss from 1400 to 1396 in order to improve uplink throughput but we noticed drops as well with this value.
+ 
+   rulebase spp-tmobile
+      transactional-rule-matching
+      dynamic-rule order first-if-tied
+      tethering-detection application ip-ttl value 60 61 62 63 124 125 126 127 254
+      tcp packets-out-of-order timeout 1000
+      tcp packets-out-of-order transmit after-reordering
+      tcp mss 1396 limit-if-present add-if-not-present
+      tcp check-window-size
+      flow end-condition timeout normal-end-signaling session-end hagr charging-edr flow-edr
+      billing-records egcdr
+|| -
+      action priority 39500 ruledef handshake_3101_01 charging-action ca_3101_up_51
+      action priority 39510 ruledef tcp-flags charging-action ca_3101_up_51
+      action priority 64010 ruledef https-port_443_01 charging-action ca_443_74
+      action priority 64020 ruledef http-default_1600_01 charging-action ca_1600_74
+      action priority 65000 ruledef default charging-action ca_ipdefault_74
+|| -
+      content-filtering mode category static-only
+      content-filtering flow-any-error permit
+      url-blacklisting action terminate-flow
+      route priority 1000 ruledef dns-port analyzer dns
+      route priority 1500 ruledef http-ports_01 analyzer http
+      route priority 2000 ruledef http-ports_02 analyzer http
+      route priority 2100 ruledef http-ports_03 analyzer http
+      route priority 2200 ruledef http-ports_04 analyzer http
+      route priority 2300 ruledef telenav-ports_01 analyzer http
+      route priority 3000 ruledef rtsp-tcp analyzer rtsp
+      route priority 3100 ruledef https-port-route analyzer secure-http
+      flow limit-across-applications 5000
+      rtp dynamic-flow-detection
+      edr transaction-complete http dns charging-edr http-edr
+      flow control-handshaking charge-to-application all-packets
+      egcdr threshold interval 7200
+      egcdr threshold volume total 100000000
+      cca diameter requested-service-unit sub-avp volume cc-total-octets 104857600
+      p2p dynamic-flow-detection
+      bandwidth default-policy bw_policy1
+      credit-control-group default
+    #exit
+      
+In logs we as well see same Errors
+ 
+es:1456  DNL: bytes:0
+2020-Jul-14+19:09:34.982 [uplane 222483 unusual] [1/0/1093 <sessmgr:13> http_analyzer.c:4221] [callid 03941326] [Call Trace] [context: up, contextID: 2]  [software internal system syslog] HTTP parse error in request: packet not analyzed because error in previous pkt
+---End of Note Titled: BigDescription---
+
+
+---Start of Note Titled:  Release-note (Created 07/15/2020 11:36:49 Modified 09/14/2020 22:05:29 by pkhirid)---
+<B>Symptom:</B>
+# show subscribers user-plane-only full callid
+
+  input pkts: 329969                              output pkts: 447318     
+  input bytes: 206113252                          output bytes: 490125763  
+  input bytes dropped: 8022962                    output bytes dropped: 72       
+  input pkts dropped: 7179                        output pkts dropped: 1
+
+We seen drops in uplink due to error seen in logs:
+HTTP parse error in request: packet not analyzed because error in previous pkt
+
+Error packets like this are dropped and not fwd to VPP.
+
+Issue noticed on StarOs 21.15.42.
+
+<B>Conditions:</B>
+Issue will be seen when L7 analysis for HTTP is enabled and HTTP Parsing fails leading to permanent failure.
+
+<B>Workaround:</B>
+Fix is provided
+
+<B>Further Problem Description:</B>
+
+
+---End of Note Titled: Release-note---
+
+
+******************* Cloud Deployments(0 of 0)*******************
+Cloud Provider    Cloud Region     Cloud Deploy State          Deploy Date  Publish to Customer
+        
+----------------------------------------------------------------------------------------------
+        
+
+
+********************* List of Fix Entries (0 of 0 ) ***********************
+
+
+**************************************** File Attachment Summary **************************************************
+Title                              		  File Type      File Size      Created By     Date-Time (34 of 34)
+------------------------------------------------------------------------------------------------------------------
+CSCvv01962.mergedtobranch.boxer.v21.x.RVx.7675c2cbascii text     404            cdetsadm       10/01/2020 16:57:02      
+CSCvv01962_p2.mergedtobranch.boxer.v21.x.RVx.0639bascii text     482            cdetsadm       10/01/2020 16:57:00      
+CSCvv01962.mergedtobranch.boxer.v21.x.RVx.0639b4cfascii text     482            cdetsadm       10/01/2020 16:57:00      
+CSCvv01962.mergedtobranch.boxer.v21.x.RVx.f6123e0aascii text     482            cdetsadm       10/01/2020 13:07:22      
+CSCvv01962.mergedtobranch.boxer.v21.x.CNx.f6123e0aascii text     482            cdetsadm       09/28/2020 22:30:22      
+CSCvv01962.mergedtobranch.boxer.v21.22.Ax.f6123e0aascii text     482            cdetsadm       09/15/2020 01:00:07      
+CSCvv01962.mergedtobranch.boxer.mainline.f6123e0a9ascii text     481            cdetsadm       09/15/2020 00:00:07      
+CSCvv01962.mergedtobranch.boxer.v21.x.Gx.f6123e0a9ascii text     481            cdetsadm       09/14/2020 21:00:08      
+Diffs--CSCvv01962.filedelta.boxer.f6123e0a9c929a65ascii text     7795           cdetsadm       09/14/2020 10:00:08      
+CSCvv01962.submittedtobranch.boxer.v21.20.x.f6123eascii text     481            cdetsadm       09/14/2020 10:00:05      
+CSCvv01962.mergedtobranch.boxer.v21.21.Ax.0639b4cfascii text     482            cdetsadm       08/25/2020 20:18:19      
+CSCvv01962.mergedtobranch.boxer.v21.19.VDx.7675c2cascii text     405            cdetsadm       08/19/2020 17:42:57      
+CSCvv01962.mergedtobranch.boxer.v21.19.VDx.0639b4cascii text     483            cdetsadm       08/19/2020 17:42:54      
+CSCvv01962.mergedtobranch.boxer.v21.x.CNx.0639b4cfascii text     482            cdetsadm       08/18/2020 02:23:11      
+CSCvv01962.mergedtobranch.boxer.mainline.0639b4cf3ascii text     481            cdetsadm       08/17/2020 18:35:52      
+CSCvv01962.mergedtobranch.boxer.v21.22.Ax.0639b4cfascii text     482            cdetsadm       08/10/2020 20:32:39      
+CSCvv01962.mergedtobranch.boxer.v21.20.Bx.0639b4cfascii text     482            cdetsadm       08/10/2020 19:17:32      
+CSCvv01962.mergedtobranch.boxer.v21.x.Gx.0639b4cf3ascii text     481            cdetsadm       08/10/2020 14:17:31      
+CSCvv01962.mergedtobranch.boxer.v21.x.CNx.7675c2cbascii text     404            cdetsadm       08/06/2020 17:57:23      
+CSCvv01962.mergedtobranch.boxer.mainline.7675c2cbbascii text     403            cdetsadm       08/06/2020 02:54:12      
+gnosis_pos_SSD_LAUPF010_2020-07-14_210911.zip     binary         1258295        dtikunov       08/04/2020 07:48:06      
+CSCvv01962.mergedtobranch.boxer.v21.21.Ax.7675c2cbascii text     404            cdetsadm       07/21/2020 19:34:58      
+CSCvv01962.mergedtobranch.boxer.v21.20.Bx.7675c2cbascii text     404            cdetsadm       07/21/2020 11:04:09      
+CSCvv01962.mergedtobranch.boxer.v21.x.Gx.7675c2cbbascii text     403            cdetsadm       07/21/2020 01:47:41      
+static-analysis                                   ascii text     0              cdetsadm       07/17/2020 01:28:03      
+Diffs--CSCvv01962.filedelta.boxer.0639b4cf32b1d8e9ascii text     7030           cdetsadm       07/16/2020 12:34:12      
+CSCvv01962.submittedtobranch.boxer.v21.18.x.0639b4ascii text     481            cdetsadm       07/16/2020 12:32:12      
+Diffs--CSCvv01962.filedelta.boxer.7675c2cbb3e9ac2aascii text     6855           cdetsadm       07/16/2020 04:00:18      
+CSCvv01962.submittedtobranch.boxer.v21.15.x.7675c2ascii text     403            cdetsadm       07/16/2020 04:00:08      
+MITG-BP-PCT-Code-Review                           ascii text     944            prrqengg       07/16/2020 01:39:45      
+Release-note-diff                                 ascii text     771            sachimit       07/17/2020 03:13:43      
+https://cae-largefile-prod.cisco.com/web-ui?appId=                              nkosanov                                
+https://cae-largefile-prod.cisco.com/web-ui?appId=                              nkosanov                                
+https://cae-largefile-prod.cisco.com/web-ui?appId=                              nkosanov                                
+
+*********************************************** History *****************************************************
+Date       Login        Field                           From                            To                               Op
+------------------------------------------------------------------------------------------------------------------------
+04/19/2021 mitgblds 	Integrated-releases     	                             	21.20.p9.80186               	New
+04/09/2021 mitgblds 	Integrated-releases     	                             	21.20.b0.80059               	New
+01/27/2021 sachimit 	serviceRequests/BEMS/BEM	                             	BEMS/BEMS01123569            	New
+01/27/2021 sachimit 	Tickets-count           	1                            	2                            	Mod
+01/27/2021 sachimit 	Tickets-count-direct    	1                            	2                            	Mod
+01/27/2021 sachimit 	Trouble-tickets         	                             	BEMS01123569                 	New
+01/27/2021 sachimit 	Trouble-tickets-direct  	                             	BEMSBEMS01123569             	New
+12/13/2020 mitgblds 	Integrated-releases     	                             	21.20.k6                     	New
+12/13/2020 mitgblds 	Version                 	                             	21.20.k6                     	New
+12/11/2020 mitgblds 	Integrated-releases     	                             	21.20.k6.78611               	New
+10/05/2020 cms      	Note                    	Scrubnote                    	Scrubnote                    	Mod
+10/01/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+10/01/2020 cdetsadm 	File Name               	                             	CSCvv01962_p2.mergedtobranch.	New
+10/01/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+10/01/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+10/01/2020 cdetsadm 	Integrated-releases     	                             	21.21.0                      	New
+10/01/2020 cdetsadm 	Version                 	                             	21.21.0                      	New
+09/30/2020 cdetsadm 	Integrated-releases     	                             	21.20.5                      	New
+09/30/2020 cdetsadm 	Version                 	                             	21.20.5                      	New
+09/28/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+09/16/2020 cdetsadm 	Integrated-releases     	                             	21.21.0.77505                	New
+09/15/2020 cdetsadm 	Integrated-releases     	                             	21.22.A0.77471               	New
+09/15/2020 cdetsadm 	Integrated-releases     	                             	21.21.M0.77469               	New
+09/15/2020 cdetsadm 	Integrated-releases     	                             	21.21.G0.77468               	New
+09/15/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+09/15/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+09/14/2020 pkhirid  	Note Title              	                             	R-comments.p4                	New
+09/14/2020 pkhirid  	Status                  	M                            	R                            	Mod
+09/14/2020 pkhirid  	Resolved-on             	2020-09-03 05:25:18.000+0000 	2020-09-15 05:05:29.000+0000 	Mod
+09/14/2020 pkhirid  	statusStates            	                             	[status=M, startDate=Mon Sep 	New
+09/14/2020 pkhirid  	statusStates            	[status=M, startDate=Mon Sep 	                             	Del
+09/14/2020 pkhirid  	Age-status              	61                           	62                           	Mod
+09/14/2020 pkhirid  	Mean-time-to-resolved   	49                           	61                           	Mod
+09/14/2020 cdetsadm 	Integrated-releases     	                             	21.20.5.77467                	New
+09/14/2020 cdetsadm 	Integrated-releases     	                             	21.20.5.77465                	New
+09/14/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+09/14/2020 cdetsadm 	File Name               	                             	Diffs--CSCvv01962.filedelta.b	New
+09/14/2020 cdetsadm 	File Name               	                             	CSCvv01962.submittedtobranch.	New
+09/14/2020 sachimit 	Note Title              	                             	M-comments.p3                	New
+09/14/2020 sachimit 	Status                  	R                            	M                            	Mod
+09/14/2020 sachimit 	More-on                 	2020-09-02 11:54:48.000+0000 	2020-09-14 11:34:49.000+0000 	Mod
+09/14/2020 sachimit 	statusStates            	                             	[status=R, startDate=Thu Sep 	New
+09/14/2020 sachimit 	statusStates            	[status=R, startDate=Thu Sep 	                             	Del
+09/14/2020 sachimit 	Age-status              	50                           	61                           	Mod
+09/09/2020 thphilip 	Note Title              	                             	SS-Eval                      	New
+09/09/2020 thphilip 	Other-mail              	                             	thphilip                     	Mod
+09/03/2020 nmicic   	To-be-fixed             	                             	21.20.5                      	New
+09/02/2020 pkhirid  	Note Title              	                             	R-comments.p3                	New
+09/02/2020 pkhirid  	Status                  	M                            	R                            	Mod
+09/02/2020 pkhirid  	Resolver                	sachimit                     	pkhirid                      	Mod
+09/02/2020 pkhirid  	Resolved-on             	2020-07-17 10:14:07.000+0000 	2020-09-03 05:25:18.000+0000 	Mod
+09/02/2020 pkhirid  	statusStates            	                             	[status=M, startDate=Wed Sep 	New
+09/02/2020 pkhirid  	statusStates            	[status=M, startDate=Wed Sep 	                             	Del
+09/02/2020 pkhirid  	Age-status              	49                           	50                           	Mod
+09/02/2020 pkhirid  	Mean-time-to-resolved   	1                            	49                           	Mod
+09/02/2020 sachimit 	Note Title              	                             	M-comments.p2                	New
+09/02/2020 sachimit 	Status                  	R                            	M                            	Mod
+09/02/2020 sachimit 	More-by                 	pkhirid                      	sachimit                     	Mod
+09/02/2020 sachimit 	More-on                 	2020-07-16 12:59:01.000+0000 	2020-09-02 11:54:48.000+0000 	Mod
+09/02/2020 sachimit 	statusStates            	                             	[status=R, startDate=Fri Jul 	New
+09/02/2020 sachimit 	statusStates            	[status=R, startDate=Fri Jul 	                             	Del
+09/02/2020 sachimit 	Age-status              	2                            	49                           	Mod
+08/26/2020 cdetsadm 	Integrated-releases     	                             	21.21.A0.77217               	New
+08/25/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/21/2020 cms      	Note                    	Scrubnote                    	Scrubnote                    	Mod
+08/21/2020 nmicic   	Attribute               	gnosis, Vodacom-CUPS-Issues  	gnosis, Vodacom-CUPS-Issues V	Mod
+08/20/2020 nmicic   	Version                 	                             	21.20.3                      	New
+08/20/2020 nmicic   	To-be-fixed             	                             	21.20.4                      	New
+08/19/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/19/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/18/2020 mtondon  	Keyword                 	                             	c-vodacom-za                 	New
+08/18/2020 mtondon  	Attribute               	gnosis                       	gnosis, Vodacom-CUPS-Issues  	Mod
+08/18/2020 cdetsadm 	Integrated-releases     	                             	21.21.M0.77103               	New
+08/18/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/17/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/13/2020 cdetsadm 	Integrated-releases     	                             	21.21.B0.77045               	New
+08/11/2020 cdetsadm 	Integrated-releases     	                             	21.22.A0.77015               	New
+08/10/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/10/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/10/2020 cdetsadm 	Integrated-releases     	                             	21.21.G0.77010               	New
+08/10/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/06/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/06/2020 cdetsadm 	Integrated-releases     	                             	21.21.M0.76972               	New
+08/06/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+08/04/2020 dtikunov 	File Name               	                             	gnosis_pos_SSD_LAUPF010_2020-	New
+08/04/2020 dtikunov 	Note Title              	                             	KnowledgeSignature           	New
+08/04/2020 dtikunov 	Attribute               	                             	gnosis                       	Mod
+08/04/2020 dtikunov 	Note Title              	KnowledgeSignature           	                             	Del
+08/04/2020 dtikunov 	File Name               	gnosis_pos_SSD_LAUPF010_2020-	                             	Del
+08/04/2020 dtikunov 	Attribute               	gnosis                       	                             	Mod
+08/04/2020 dtikunov 	Note Title              	                             	DetectionLogic               	New
+08/04/2020 dtikunov 	File Name               	                             	gnosis_pos_SSD_LAUPF010_2020-	New
+08/04/2020 dtikunov 	Note Title              	                             	KnowledgeSignature           	New
+08/04/2020 dtikunov 	Attribute               	                             	gnosis                       	Mod
+07/31/2020 nkosanov 	serviceRequests/C3/68948	                             	                             	Mod
+07/31/2020 nkosanov 	Urgency-desc            	P3                           	CL3                          	Mod
+07/23/2020 cdetsadm 	Integrated-releases     	                             	21.15.44.76678               	New
+07/23/2020 cdetsadm 	Integrated-releases     	21.15.43.76660               	                             	Del
+07/22/2020 cdetsadm 	Related-bugs            	                             	Teacat/CSCvv11756            	New
+07/22/2020 cdetsadm 	Teabugid                	                             	CSCvv11756                   	Mod
+07/22/2020 cdetsadm 	Integrated-releases     	                             	21.21.B0.76772               	New
+07/22/2020 cdetsadm 	Submitted-on            	2020-07-15 18:36:45.921+0000 	2020-07-15 18:36:45.000+0000 	Mod
+07/22/2020 cdetsadm 	New-on                  	2020-07-15 18:36:45.921+0000 	2020-07-15 18:36:45.000+0000 	Mod
+07/22/2020 cdetsadm 	Integrated-releases     	                             	21.21.A0.76763               	New
+07/21/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+07/21/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+07/21/2020 cdetsadm 	Integrated-releases     	                             	21.18.6                      	New
+07/21/2020 cdetsadm 	Version                 	                             	21.18.6                      	New
+07/21/2020 cdetsadm 	Integrated-releases     	                             	21.21.G0.76736               	New
+07/21/2020 cdetsadm 	File Name               	                             	CSCvv01962.mergedtobranch.box	New
+07/19/2020 cdetsbtk 	Security-screening-times	2020-07-17 07:23:22.000+0000 	2020-07-20 07:54:24.000+0000 	Mod
+07/17/2020 cdetsadm 	Integrated-releases     	                             	21.15.43                     	New
+07/17/2020 cdetsadm 	Version                 	                             	21.15.43                     	New
+07/17/2020 cdetsadm 	Integrated-releases     	                             	21.18.6.76674                	New
+07/17/2020 sachimit 	Note Title              	                             	R-comments.p2                	New
+07/17/2020 sachimit 	Status                  	M                            	R                            	Mod
+07/17/2020 sachimit 	Resolver                	pkhirid                      	sachimit                     	Mod
+07/17/2020 sachimit 	Resolved-on             	2020-07-16 11:07:33.000+0000 	2020-07-17 10:14:07.000+0000 	Mod
+07/17/2020 sachimit 	statusStates            	                             	[status=M, startDate=Thu Jul 	New
+07/17/2020 sachimit 	statusStates            	[status=M, startDate=Thu Jul 	                             	Del
+07/17/2020 sachimit 	Age-status              	1                            	2                            	Mod
+07/17/2020 sachimit 	Mean-time-to-resolved   	0                            	1                            	Mod
+07/17/2020 sachimit 	Note                    	Release-note                 	Release-note                 	Mod
+07/17/2020 sachimit 	File Name               	                             	Release-note-diff            	Mod
+07/17/2020 sachimit 	File Name               	603                          	771                          	Mod
+07/17/2020 sachimit 	Keyword                 	                             	rne-approved                 	New
+07/17/2020 sachimit 	Workarounds             	No workaround has been identi	Fix is provided              	Mod
+07/17/2020 cdetsadm 	File Name               	                             	static-analysis              	New
+07/16/2020 cdetsbtk 	Security-screening-times	2020-07-16 08:44:38.000+0000 	2020-07-17 07:23:22.000+0000 	Mod
+07/16/2020 cdetsadm 	File Name               	                             	Diffs--CSCvv01962.filedelta.b	New
+07/16/2020 cdetsadm 	Multi-commit-flag       	                             	Y                            	Mod
+07/16/2020 cdetsadm 	File Name               	                             	CSCvv01962.submittedtobranch.	New
+07/16/2020 cms      	Note Title              	                             	Scrubnote                    	New
+07/16/2020 cdetsadm 	Integrated-releases     	                             	21.15.43.76660               	New
+07/16/2020 cdetsadm 	Integrated-releases     	                             	21.15.43.76659               	New
+07/16/2020 mitgblds 	Note Title              	                             	no_ss_reason_v21.18.x        	New
+07/16/2020 pkhirid  	Note Title              	                             	M-comments                   	New
+07/16/2020 pkhirid  	Status                  	R                            	M                            	Mod
+07/16/2020 pkhirid  	More-on                 	2020-07-16 11:07:33.000+0000 	2020-07-16 12:59:01.000+0000 	Mod
+07/16/2020 pkhirid  	statusStates            	                             	[status=R, startDate=Thu Jul 	New
+07/16/2020 pkhirid  	statusStates            	[status=R, startDate=Thu Jul 	                             	Del
+07/16/2020 pkhirid  	Note Title              	                             	R-comments                   	New
+07/16/2020 pkhirid  	Note                    	Release-note                 	Release-note                 	Mod
+07/16/2020 pkhirid  	File Name               	                             	Release-note-diff            	Mod
+07/16/2020 pkhirid  	File Name               	347                          	603                          	Mod
+07/16/2020 pkhirid  	Status                  	A                            	R                            	Mod
+07/16/2020 pkhirid  	Dev-escape-resolver-opin	                             	N                            	Mod
+07/16/2020 pkhirid  	Dev-escape-activity     	                             	Not-A-Dev-Escape             	Mod
+07/16/2020 pkhirid  	More-by                 	                             	pkhirid                      	Mod
+07/16/2020 pkhirid  	Opener                  	                             	pkhirid                      	Mod
+07/16/2020 pkhirid  	Resolver                	                             	pkhirid                      	Mod
+07/16/2020 pkhirid  	Breakage                	                             	No                           	Mod
+07/16/2020 pkhirid  	Regression              	                             	N                            	Mod
+07/16/2020 pkhirid  	By-previous-commit-value	                             	No                           	Mod
+07/16/2020 pkhirid  	Bug-origin              	                             	Requirements                 	Mod
+07/16/2020 pkhirid  	Released-code           	                             	N                            	Mod
+07/16/2020 pkhirid  	Origin                  	                             	requirements                 	Mod
+07/16/2020 pkhirid  	TPS_issue               	                             	N                            	Mod
+07/16/2020 pkhirid  	TPS_flag                	                             	N                            	Mod
+07/16/2020 pkhirid  	Behavior-changed        	                             	N                            	Mod
+07/16/2020 pkhirid  	Impact-regression       	                             	N                            	Mod
+07/16/2020 pkhirid  	Original-resolved-on    	                             	2020-07-16 11:07:33.000+0000 	Mod
+07/16/2020 pkhirid  	Documents-changed       	                             	No                           	Mod
+07/16/2020 pkhirid  	Hardware-changed        	                             	No                           	Mod
+07/16/2020 pkhirid  	Software-changed        	                             	Yes                          	Mod
+07/16/2020 pkhirid  	More-on                 	                             	2020-07-16 11:07:33.000+0000 	Mod
+07/16/2020 pkhirid  	Opened-on               	                             	2020-07-16 11:07:33.000+0000 	Mod
+07/16/2020 pkhirid  	Resolved-on             	                             	2020-07-16 11:07:33.000+0000 	Mod
+07/16/2020 pkhirid  	statusStates            	                             	[status=A, startDate=Wed Jul 	New
+07/16/2020 pkhirid  	statusStates            	[status=A, startDate=Wed Jul 	                             	Del
+07/16/2020 pkhirid  	Age-status              	0                            	1                            	Mod
+07/16/2020 pkhirid  	Conditions              	Conditions are being analyzed	Issue will be seen when L7 an	Mod
+07/16/2020 pkhirid  	Mean-time-to-resolved   	                             	0                            	Mod
+07/16/2020 cdetsadm 	File Name               	                             	Diffs--CSCvv01962.filedelta.b	New
+07/16/2020 cdetsadm 	File Name               	                             	CSCvv01962.submittedtobranch.	New
+07/16/2020 mitgblds 	Note Title              	                             	no_ss_reason_v21.15.x        	New
+07/16/2020 pkhirid  	Note Title              	                             	Unit-test                    	New
+07/16/2020 prrqengg 	Code-reviewer           	                             	asufi,shaigoel               	New
+07/16/2020 prrqengg 	File Name               	                             	MITG-BP-PCT-Code-Review      	Mod
+07/16/2020 prrqengg 	File Name               	942                          	944                          	Mod
+07/16/2020 prrqengg 	File Name               	                             	MITG-BP-PCT-Code-Review      	New
+07/15/2020 cdetsbtk 	BTK-security-complete   	                             	Y                            	Mod
+07/15/2020 cdetsbtk 	Is-customer-visible     	                             	Y                            	Mod
+07/15/2020 cdetsbtk 	Security-screening-times	                             	2020-07-16 08:44:38.000+0000 	Mod
+07/15/2020 sachimit 	DE-manager              	bikbhatt                     	sachimit                     	Mod
+07/15/2020 sachimit 	Doc-manager             	bikbhatt                     	sachimit                     	Mod
+07/15/2020 sachimit 	Status                  	N                            	A                            	Mod
+07/15/2020 sachimit 	Engineer                	                             	pkhirid                      	Mod
+07/15/2020 sachimit 	Assigner                	                             	sachimit                     	Mod
+07/15/2020 sachimit 	To-be-fixed             	                             	21.15.43,21.18.6             	New
+07/15/2020 sachimit 	Assigned Date           	                             	2020-07-15 19:40:37.000+0000 	Mod
+07/15/2020 sachimit 	statusStates            	                             	[status=N, startDate=Wed Jul 	New
+07/15/2020 sachimit 	statusStates            	[status=N, startDate=Wed Jul 	                             	Del
+07/15/2020 sachimit 	Mean-time-to-assigned   	                             	0                            	Mod
+07/15/2020 nkosanov 	File Name               	                             	https://cae-largefile-prod.ci	New
+07/15/2020 nkosanov 	File Name               	                             	https://cae-largefile-prod.ci	New
+07/15/2020 nkosanov 	File Name               	                             	https://cae-largefile-prod.ci	New
+07/15/2020 nkosanov 	File Name               	                             	Release-note-diff            	New
+07/15/2020 nkosanov 	Note                    	Release-note                 	Release-note                 	Mod
+07/15/2020 nkosanov 	File Name               	                             	Release-note-diff            	Mod
+07/15/2020 nkosanov 	Symptoms                	# show subscribers user-plane	# show subscribers user-plane	Mod
+07/15/2020 nkosanov 	serviceRequests/C3/68948	                             	C3/689485173                 	New
+07/15/2020 nkosanov 	Urgency-desc            	NA                           	P3                           	Mod
+07/15/2020 nkosanov 	Urgency                 	                             	6                            	Mod
+07/15/2020 nkosanov 	Tickets-count           	0                            	1                            	Mod
+07/15/2020 nkosanov 	TACSR-count             	                             	1                            	Mod
+07/15/2020 nkosanov 	Tickets-count-direct    	                             	1                            	Mod
+07/15/2020 nkosanov 	Trouble-tickets         	                             	689485173                    	New
+07/15/2020 nkosanov 	Trouble-tickets-direct  	                             	C3689485173                  	New
+07/15/2020 nkosanov 	Note Title              	                             	BigDescription               	New
+07/15/2020 nkosanov 	Note Title              	                             	Release-note                 	New
+07/15/2020 nkosanov 	Keyword                 	                             	c-tmo-us                     	New
+07/15/2020 nkosanov 	Version                 	                             	21.15.42                     	New
+07/15/2020 nkosanov 	Defect Created          	                             	                             	New
