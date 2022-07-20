@@ -7,8 +7,8 @@ file = open("v21.20.x-prs.html","r")
 text = str(file.read()).split()
 
 #should add user input here
-build_1 = str(11111)
-build_2 = str(11111)
+build_1 = str(85903)
+build_2 = str(85786)
 
 #Locate where the build number is in the list
 b1_idx = 0
