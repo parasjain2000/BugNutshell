@@ -10,14 +10,17 @@ text = str(file.read()).split()
 build_1 = str(85903)
 build_2 = str(85786)
 
-#Locate where the build number is in the list
+
 b1_idx = 0
 b2_idx = 0
 
 try:
+    #Locate where the build number is in the list
     b1_idx = text.index(build_1)
     b2_idx = text.index(build_2)
+#if invalid build number is input
 except ValueError:
+    
     print("One or more build numbers are invalid.")
 
 
