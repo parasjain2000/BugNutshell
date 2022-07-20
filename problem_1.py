@@ -7,12 +7,18 @@ file = open("v21.20.x-prs.html","r")
 text = str(file.read()).split()
 
 #should add user input here
-build_1 = str(86169)
-build_2 = str(86169)
+build_1 = str(11111)
+build_2 = str(11111)
 
 #Locate where the build number is in the list
-b1_idx = text.index(build_1)
-b2_idx = text.index(build_2)
+b1_idx = 0
+b2_idx = 0
+
+try:
+    b1_idx = text.index(build_1)
+    b2_idx = text.index(build_2)
+except ValueError:
+    print("One or more build numbers are invalid.")
 
 
 b1_end_idx = 0
@@ -49,7 +55,7 @@ duplicates = set(b1_cdets).intersection(b2_cdets)
 isEmpty = (len(duplicates) == 0)
 
 if isEmpty:
-    print("No CDETs present between both builds")
+    print("No CDETs present between both builds.")
 else:
     print(duplicates)
 
