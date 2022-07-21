@@ -30,8 +30,7 @@ file1.close()
 file1 = open("v21.20.x-prs.html", "r")
 # setting flag and index to 0
 flag = 0
-index = 0
-  
+index = 0  
 # Loop through the file line by line
 for line in file1:
   index += 1    
@@ -63,8 +62,8 @@ for i in range(len(res)):
         firstIdx = res[i]
         secondIdx = mer[j]
         #entire paragraph including build number
-        substring = text[firstIdx+len(stringBeforeBuild):secondIdx+len(stringAfterBuild)]
-        print("Build Number is" + substring)
+        substring = text[firstIdx:secondIdx+len(stringAfterBuild)]
+        print(substring)
         break
         # checking condition for branch not found and printing line
       elif par == -1:
