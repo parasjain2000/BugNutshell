@@ -3,12 +3,12 @@ pattern = re.compile("CSC[a-zA-Z][a-zA-Z]\d\d\d\d\d\s")
 
 
 #If a user inputs an invalid build number, the function will just return "No CDETs present between both builds."
-def find_cdets(build_1,build_2):
+def find_cdets(build_1,build_2,file_name):
     b1_idx = 0
     b2_idx = 0
     b1_cdets = []
     b2_cdets = []
-    with open("v21.20.x-prs.html") as fp:
+    with open(file_name) as fp:
         if build_1 != build_2:
             for i, line in enumerate(fp):
                 if build_1 in line:
