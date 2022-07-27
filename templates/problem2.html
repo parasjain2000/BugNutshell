@@ -1,1 +1,14 @@
-{% extends "navbar.html" %}
+<!DOCTYPE html>
+<html>
+    <h1> Find Commits </h1>
+<body>
+<!-- User enters inputs -->
+<form action="{{ url_for("problem2")}}" method="post">
+    <label for="branch_no">Branch Number:</label>
+    <input type="text" id="branch_no" name="bno" placeholder="branch number">
+    <label for="cdet">CDET:</label>
+    <input type="text" id="cdet" name="cdet" placeholder="CDET">
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

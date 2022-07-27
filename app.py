@@ -1,5 +1,4 @@
 # Importing flask module
-# An object of Flask class is the WSGI application
 from flask import Flask, render_template, request
 
 # Creating a Flask instance
@@ -11,8 +10,8 @@ def index():
 
 @app.route('/problem1')
 def problem1():
-    return render_template("problem1.html")
-
+    return render_template('problem1.html')    
+    
 @app.route('/problem2')
 def problem2():
     return render_template("problem2.html")
