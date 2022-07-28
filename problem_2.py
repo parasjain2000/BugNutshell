@@ -1,23 +1,24 @@
-
 def find_build_num(cdet, file_name):
-  l = ""
+  build= ""
   flag = False
-
+  arr = []
   try:
     with open(file_name) as fp:
       for i, line in enumerate(fp):
         if "===== Build" in line:
-          l = line
+          build = line.split(" ")[2]
         if cdet in line:
           flag = True
-          break
+          arr.append(build)
     fp.close()
     if flag:
-      return l.split(" ")[2]
+      return arr
     else:
       return "Invalid CDET"
   except:
     return "Invalid Branch"
+
+
 
 
 
