@@ -1,3 +1,4 @@
+import problem_2
 
 def find_branch_and_commit_id(file_name):
     dict = {}
@@ -18,12 +19,18 @@ def find_branch_and_commit_id(file_name):
     fp.close()
     return dict
 
-
+# find number of commits for CDET
 dict = find_branch_and_commit_id("CSCvv01962.txt")
-no_commits = len(dict)
-print("Number of commits:", no_commits)
+num_commits = len(dict)
+print("Number of commits:", num_commits)
 print(dict)
 
-
-
-
+# match branch names and build numbers for CDET
+i = 0
+for i in range(num_commits):
+    new_value = list(dict)
+    index_value = new_value[i]
+    actual = dict.get(index_value)
+    print(actual)
+    problem_2.find_build_num("CSCvv01962",actual + "-prs.html")
+    i += 1
