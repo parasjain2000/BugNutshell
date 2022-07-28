@@ -1,6 +1,7 @@
 
 def find_branch_and_commit_id(file_name):
     dict = {}
+    #commit id: branch
     with open (file_name) as fp:
         for i, line in enumerate(fp):
             if "CSCvv" in line and "boxer" in line and "mergedtobranch" in line:
@@ -18,7 +19,9 @@ def find_branch_and_commit_id(file_name):
     return dict
 
 
-print(find_branch_and_commit_id("CSCvv01962.txt"))
+dict = find_branch_and_commit_id("CSCvv01962.txt")
+print(dict)
+
 
 
 
