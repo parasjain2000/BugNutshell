@@ -1,1 +1,22 @@
-{% extends "navbar.html" %}
+<!DOCTYPE html>
+<html>
+    <h1> Find Branch and Commit IDs for a CDET </h1>
+<body>
+<!-- User enters inputs -->
+<form action="{{ url_for("problem3")}}" method="post">
+    <label for="branch_no">CDET file name:</label>
+    <input type="text" id="branch_no" name="bno" placeholder="CDET file name">
+    <button type="submit">Submit</button>
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+</body>
+</html>

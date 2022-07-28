@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request ,flash
 from problem_1 import find_cdets
 from problem_2 import find_build_num
+from problem_3 import find_branch_and_commit_id
 # Creating a Flask instance
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -30,8 +31,13 @@ def problem2():
         flash(find_build_num(cdet,branch))
     return render_template("problem2.html")
 
-@app.route('/problem3')
+@app.route('/problem3', methods=["GET","POST"])
 def problem3():
+    if request.method == "POST":
+        file_name = request.form.get("bno")
+        dc,commits = find_branch_and_commit_id(file_name)
+        flash(dc)
+        flash(str(commits) + " Commits")
     return render_template("problem3.html")
 
 @app.route('/problem4')
