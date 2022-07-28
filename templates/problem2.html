@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <h1> Find Commits </h1>
+    <h1> Find Build Number </h1>
 <body>
 <!-- User enters inputs -->
 <form action="{{ url_for("problem2")}}" method="post">
-    <label for="branch_no">Branch Number:</label>
-    <input type="text" id="branch_no" name="bno" placeholder="branch number">
+    <label for="branch_no">Branch Name:</label>
+    <input type="text" id="branch_no" name="bno" placeholder="branch name">
     <label for="cdet">CDET:</label>
     <input type="text" id="cdet" name="cdet" placeholder="CDET">
     <button type="submit">Submit</button>
 </form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
 </body>
 </html>

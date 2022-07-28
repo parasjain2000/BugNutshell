@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+
+
 <html>
     <h1> Find CDETS </h1>
 <body>
@@ -8,7 +11,20 @@
     <input type="text" id="build_1" name="b1" placeholder="build number 1">
     <label for="build_2">Build Number 2:</label>
     <input type="text" id="build_2" name="b2" placeholder="build number 2">
+    <label for="file_name">File Name:</label>
+    <input type="text" id="file_name" name="file_name" placeholder="file name">
     <button type="submit">Submit</button>
 </form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
 </body>
 </html>
