@@ -10,7 +10,7 @@ def find_branch_and_commit_id(file_name):
                 dots = title.count('.')
                 commit_id = title_s[dots].replace("ascii","")
                 branch = title_s[3]
-                hi = title_s[dots-1]
+                hi = title_s[dots-1]  
                 for i in range(4,dots):
                     branch = branch + "." + title_s[i]
 
@@ -20,6 +20,8 @@ def find_branch_and_commit_id(file_name):
 
 
 dict = find_branch_and_commit_id("CSCvv01962.txt")
+no_commits = len(dict)
+print("Number of commits:", no_commits)
 print(dict)
 
 
