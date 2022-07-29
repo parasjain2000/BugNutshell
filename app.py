@@ -37,7 +37,7 @@ def problem3():
         file_name = request.form.get("bno")
         dc,commits = find_branch_and_commit_id(file_name)
         flash(dc)
-        flash(str(commits) + " Commits")
+        flash(str(commits) + " Total Commits, " + str(len(dc)) + " Unique commits")
     return render_template("problem3.html")
 
 @app.route('/problem4')
